@@ -1,0 +1,10 @@
+{
+  "validInput": {
+    "user": "admin",
+    "action": "read"
+  },
+  "invalidInput": {
+    "user": "",
+    "action": null
+  }
+}
