@@ -1,11 +1,11 @@
 import '../../support/commands'
 
-describe('OPA Playground - Policy Deny', () => {
+describe('OPA Playground - Invalid Input', () => {
   beforeEach(() => {
     cy.visit('https://play.openpolicyagent.org/')
   })
 
-  it('Deve retornar false para usuário guest', () => {
+  it('Deve falhar quando input não contém user', () => {
     cy.opaSetEditorValue(0, `
       package auth
 
@@ -16,7 +16,7 @@ describe('OPA Playground - Policy Deny', () => {
       }
     `)
 
-    cy.opaSetEditorValue(1, `{ "user": "guest" }`)
+    cy.opaSetEditorValue(1, `{}`)
 
     cy.contains('button', 'Evaluate').click()
 
